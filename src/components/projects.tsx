@@ -42,7 +42,8 @@ function ProjectCard({ project }: { project: Project }) {
             alt={`${project.name} screenshot`}
             fill
             sizes="(min-width: 640px) 384px, 100vw"
-            className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            style={{ objectPosition: project.imagePosition ?? "top" }}
           />
         ) : (
           <Cover project={project} />

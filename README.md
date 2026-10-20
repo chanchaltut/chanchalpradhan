@@ -14,7 +14,7 @@ npm run build && npm start
 
 Everything on the page (bio roles, stats, stack, projects, experience, education, socials) lives in
 `src/data/site.ts`. Project screenshots go in `public/projects/`, tech icons in `public/icons/`,
-and the downloadable resume is `public/resume.pdf`.
+and the downloadable resume is `public/ChanchalPradhanRESUME.pdf` (path set by `site.resume`).
 
 The GitHub activity graph is fetched from the public contributions API and refreshed every 6 hours.
 

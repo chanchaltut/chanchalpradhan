@@ -7,7 +7,7 @@ export const site = {
   location: "Kolkata, India",
   timezone: "Asia/Kolkata",
   email: "contact@chanchalpradhan.com",
-  resume: "/resume.pdf",
+  resume: "/ChanchalPradhanRESUME.pdf",
   roles: [
     "Full Stack AI Engineer",
     "Founder at Heart",
@@ -119,6 +119,8 @@ export type Project = {
   tagline: string;
   description: string;
   image?: string;
+  // CSS object-position for the cover crop; defaults to "top".
+  imagePosition?: string;
   live?: string;
   repo?: string;
   status?: string;
@@ -142,7 +144,9 @@ export const projects: Project[] = [
     tagline: "Property Rental Marketplace",
     description:
       "A full property rental and real-estate platform in the mould of 99acres and housing.com, with scalable listing models, auth and fast search filtering.",
-    live: "https://www.rentyaard.com",
+    image: "/projects/rentyaard.webp",
+    imagePosition: "left top",
+    live: "https://rentyaard.vercel.app",
     tech: ["mongodb", "express", "react", "nodejs"],
   },
   {
@@ -156,13 +160,13 @@ export const projects: Project[] = [
     tech: ["react", "javascript", "figma", "vercel"],
   },
   {
-    name: "RCTI",
-    tagline: "Training Institute Platform",
+    name: "TaxByCA",
+    tagline: "Tax & Compliance Platform",
     description:
-      "Lead-generating website for a computer training institute in Odisha, with course catalogue, enrolment funnel and admin login.",
-    image: "/projects/rcti.webp",
-    live: "https://www.rcti.swagatodisha.com",
-    repo: "https://github.com/chanchaltut/rcti",
+      "Online home for a chartered accountancy firm serving clients across India: tax, GST, audit and registration services with a consultation funnel and WhatsApp lead capture.",
+    image: "/projects/taxbyca.webp",
+    live: "https://taxbyca.in",
+    repo: "https://github.com/chanchaltut/TaxByCA",
     tech: ["react", "javascript", "figma"],
   },
 ];
@@ -173,7 +177,7 @@ export const moreWork = [
     kind: "Hospitality · Booking site",
     href: "https://verdevistafarmandresort.vercel.app",
   },
-  { name: "TaxByCA", kind: "Fintech · Tax & compliance", href: "https://taxbyca.vercel.app" },
+  { name: "RCTI", kind: "EdTech · Training institute site", href: "https://www.rcti.swagatodisha.com" },
   { name: "Klero Généalogie", kind: "SaaS · Genealogy platform", href: "https://klero.vercel.app" },
   {
     name: "SharkMind",
