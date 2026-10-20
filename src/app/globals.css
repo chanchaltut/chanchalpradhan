@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #ffffff;
+  --fg: #111111;
+  --body: #4a4a4a;
+  --muted: #6b6b6b;
+  --faint: #a3a3a3;
+  --line: rgba(0, 0, 0, 0.07);
+  --card: rgba(0, 0, 0, 0.012);
+  --card-hover: rgba(0, 0, 0, 0.025);
+  --input: #ffffff;
+  --grid: rgba(0, 0, 0, 0.045);
+  --tip-bg: #1e1e20;
+  --tip-fg: #f0f0f0;
+  --cell-0: rgba(0, 0, 0, 0.06);
+  --cell-1: #9be9a8;
+  --cell-2: #40c463;
+  --cell-3: #30a14e;
+  --cell-4: #216e39;
+  --accent: #10b981;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #070709;
+  --fg: #f0f0f0;
+  --body: #b2b2b2;
+  --muted: #8a8a8a;
+  --faint: #5c5c5c;
+  --line: rgba(255, 255, 255, 0.07);
+  --card: rgba(255, 255, 255, 0.02);
+  --card-hover: rgba(255, 255, 255, 0.035);
+  --input: rgba(255, 255, 255, 0.035);
+  --grid: rgba(255, 255, 255, 0.035);
+  --tip-bg: #1e1e20;
+  --tip-fg: #f0f0f0;
+  --cell-0: rgba(255, 255, 255, 0.055);
+  --cell-1: #0e4429;
+  --cell-2: #006d32;
+  --cell-3: #26a641;
+  --cell-4: #39d353;
+  --accent: #34d399;
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-input: var(--input);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-geist-pixel-square);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.25s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
